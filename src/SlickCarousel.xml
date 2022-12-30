@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget
+    id="mendix.slickcarousel.SlickCarousel"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+>
+    <name>Slick Carousel</name>
+    <description>Customizable carousel based on react-slick</description>
+    <icon />
+    <properties>
+        <propertyGroup caption="General">
+            <property key="carouselType" type="enumeration" defaultValue="static">
+                <caption>Type</caption>
+                <description/>
+                <enumerationValues>
+                    <enumerationValue key="static">Static</enumerationValue>
+                    <enumerationValue key="dynamic">Dynamic</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="slideList" type="object" isList="true">
+                <caption>Slide list</caption>
+                <description />
+                <properties>
+                    <propertyGroup caption="General">
+                        <property key="caption" type="textTemplate" required="false">
+                            <caption>Caption</caption>
+                            <description />
+                        </property>
+                        <property key="content" type="widgets">
+                            <caption>Content</caption>
+                            <description />
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
+            <property key="data" type="datasource" isList="true" required="true">
+                <caption>Data source for slides</caption>
+                <description />
+            </property>
+            <property key="contentTemplate" type="widgets" dataSource="data" required="true">
+                <caption>Content</caption>
+                <description>Content of a box</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>

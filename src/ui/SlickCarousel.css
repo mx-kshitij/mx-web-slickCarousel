@@ -1,0 +1,22 @@
+/*
+Place your custom CSS here
+*/
+.slider-outer {
+    min-height: 100px;
+}
+
+.slide{
+    flex: 1;
+}
+
+.slide > h3{
+    text-align: center;
+}
+
+.slide-content{
+    flex: 1;
+}
+
+.slide-caption{
+    text-align: center;
+}
