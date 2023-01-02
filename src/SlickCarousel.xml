@@ -2,7 +2,7 @@
 <widget
     id="mendix.slickcarousel.SlickCarousel"
     pluginWidget="true"
-    needsEntityContext="true"
+    needsEntityContext="false"
     offlineCapable="true"
     supportedPlatform="Web"
     xmlns="http://www.mendix.com/widget/1.0/"
@@ -16,7 +16,7 @@
         <propertyGroup caption="General">
             <property key="carouselType" type="enumeration" defaultValue="static">
                 <caption>Type</caption>
-                <description/>
+                <description />
                 <enumerationValues>
                     <enumerationValue key="static">Static</enumerationValue>
                     <enumerationValue key="dynamic">Dynamic</enumerationValue>
@@ -45,6 +45,69 @@
             <property key="contentTemplate" type="widgets" dataSource="data" required="true">
                 <caption>Content</caption>
                 <description>Content of a box</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Options">
+            <property key="arrows" type="boolean" defaultValue="false">
+                <caption>Arrows</caption>
+                <description />
+            </property>
+            <property key="autoplay" type="boolean" defaultValue="false">
+                <caption>Autoplay</caption>
+                <description />
+            </property>
+            <property key="autoplaySpeed" type="integer" defaultValue="3000">
+                <caption>Autoplay speed</caption>
+                <description>Autoplay speed in ms</description>
+            </property>
+            <property key="dots" type="boolean" defaultValue="true">
+                <caption>Dots</caption>
+                <description />
+            </property>
+            <property key="draggable" type="boolean" defaultValue="true">
+                <caption>Draggable</caption>
+                <description />
+            </property>
+            <property key="fade" type="boolean" defaultValue="false">
+                <caption>Fade</caption>
+                <description />
+            </property>
+            <property key="infinite" type="boolean" defaultValue="true">
+                <caption>Infinite</caption>
+                <description />
+            </property>
+            <property key="pauseOnHover" type="boolean" defaultValue="false">
+                <caption>Pause on hover</caption>
+                <description />
+            </property>
+            <property key="pauseOnDotsHover" type="boolean" defaultValue="false">
+                <caption>Pause on dots hover</caption>
+                <description />
+            </property>
+            <property key="speed" type="integer" defaultValue="3000">
+                <caption>Speed</caption>
+                <description />
+            </property>
+            <property key="vertical" type="boolean" defaultValue="false">
+                <caption>Vertical</caption>
+                <description />
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Events">
+            <property key="currentSlide" type="attribute" required="false">
+                <caption>Current Slide</caption>
+                <description>Attribute to track current slide</description>
+                <attributeTypes>
+                    <attributeType name="Integer" />
+                </attributeTypes>
+            </property>
+            <property key="beforeChange" type="action">
+                <caption>Before change</caption>
+                <description>Action to be performed before the slide is changed</description>
+            </property>
+            <property key="afterChange" type="action">
+                <caption>Before change</caption>
+                <description>Action to be performed after the slide is changed</description>
             </property>
         </propertyGroup>
     </properties>

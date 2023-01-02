@@ -4,7 +4,8 @@
  * @author Mendix Widgets Framework Team
  */
 import { ComponentType, CSSProperties, ReactNode } from "react";
-import { DynamicValue, ListValue, ListWidgetValue } from "mendix";
+import { ActionValue, DynamicValue, EditableValue, ListValue, ListWidgetValue } from "mendix";
+import { Big } from "big.js";
 
 export type CarouselTypeEnum = "static" | "dynamic";
 
@@ -27,6 +28,20 @@ export interface SlickCarouselContainerProps {
     slideList: SlideListType[];
     data: ListValue;
     contentTemplate: ListWidgetValue;
+    arrows: boolean;
+    autoplay: boolean;
+    autoplaySpeed: number;
+    dots: boolean;
+    draggable: boolean;
+    fade: boolean;
+    infinite: boolean;
+    pauseOnHover: boolean;
+    pauseOnDotsHover: boolean;
+    speed: number;
+    vertical: boolean;
+    currentSlide?: EditableValue<Big>;
+    beforeChange?: ActionValue;
+    afterChange?: ActionValue;
 }
 
 export interface SlickCarouselPreviewProps {
@@ -42,4 +57,18 @@ export interface SlickCarouselPreviewProps {
     slideList: SlideListPreviewType[];
     data: {} | { type: string } | null;
     contentTemplate: { widgetCount: number; renderer: ComponentType<{ caption?: string }> };
+    arrows: boolean;
+    autoplay: boolean;
+    autoplaySpeed: number | null;
+    dots: boolean;
+    draggable: boolean;
+    fade: boolean;
+    infinite: boolean;
+    pauseOnHover: boolean;
+    pauseOnDotsHover: boolean;
+    speed: number | null;
+    vertical: boolean;
+    currentSlide: string;
+    beforeChange: {} | null;
+    afterChange: {} | null;
 }
